@@ -1,0 +1,27 @@
+<div class="col-lg-6 col-lg-offset-3 text-center">
+ <label for="filt">Filter</label>
+  <select name="" id="filt" ng-options="author as author.name for author in authors" ng-model="users_filter">
+  </select>
+</div>
+
+<section class="transactions-list" data-quantity="{{transactions.length}}" data-total="{{total}} $">
+  <ul class="transactions-list--all">
+    <li class="row transactions-list--item col-lg-12" ng-repeat="trns in transactions | filter: users_filter.name">
+      <div class="col-lg-6 transactions-list--id_block">
+        <span>{{$index+1}}</span>
+        <label>id <span class="item_id" ng-bind="trns.id"></span></label>
+      </div>
+      <div class="col-lg-6 transactions-list--data_block">
+        <label>title
+          <input type="text" class="transactions-list--field__text" ng-model="trns.title" ng-disabled="trns.disabled">
+        </label>
+        <label>balance
+          <input type="number" class="transactions-list--field__balance" ng-model="trns.balance" ng-disabled="trns.disabled">{{trns.type}}</label>
+      </div>
+      <div class="col-lg-12 transactions-list--btn_panel">
+        <button class="btn btn-default" ng-show="trns.disabled" ng-click="editField(trns)">edit</button>
+        <button class="btn btn-success" ng-show="!trns.disabled" ng-click="saveField(trns, trns.title, trns.balance,trns.id)">save</button>
+      </div>
+    </li>
+  </ul>
+</section>

@@ -1,0 +1,21 @@
+<h1 class="text-center txt-shadow">Payment id - {{id}}</h1>
+
+<h2 ng-show="payment.find" class="text-center">Created by {{payment.data.author}}</h2>
+
+<h1 ng-show="!payment.find" class="text-center">Not find</h1>
+<section ng-show="payment.find" ng-keyup="update(payment.data.title, payment.data.balance, payment.data.id)">
+  <div ng-show="payment.find">
+    <ul>
+      <li>
+        <label>id <span class="item_id" ng-bind="payment.data.id"></span></label>
+        <label>title
+          <input type="text" class="payment-field" ng-model="payment.data.title">
+        </label>
+        <label>balance
+          <input type="number" class="payment-field" ng-model="payment.data.balance">{{trns.type}}</label>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!--title, balance, id-->

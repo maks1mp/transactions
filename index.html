@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="style/bootstrap.min.css">
+  <link rel="stylesheet" href="style/default.css">
+</head>
+
+<body ng-app="app">
+
+  <header class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <button ui-sref="users" class="col-xs-12 btn-list--picker">USERS</button>
+      </div>
+      <div class="col-xs-6">
+        <button ui-sref="trns" class="col-xs-12 btn-list--picker">TRANSACTIONS</button>
+      </div>
+    </div>
+  </header>
+
+  <main ui-view class="container-fluid"></main>
+
+  <script src="src/angular.min.js"></script>
+  <script src="src/angular-ui-router.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/trns/trnsCtrl.js"></script>
+  <script src="js/trns/listDir.js"></script>
+  <script src="js/trns/paymentCtrl.js"></script>
+  <script src="js/users/usersCtrl.js"></script>
+  <script src="js/users/usersBase.js"></script>
+  <script src="js/users/usersList.js"></script>
+</body>
+
+</html>

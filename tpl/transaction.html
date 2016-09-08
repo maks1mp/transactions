@@ -1,0 +1,23 @@
+<h1 class="text-center txt-shadow">Transactions</h1>
+
+<div class="row">
+  <div class="create-trns col-lg-6 col-lg-offset-3 col-xs-12">
+    <div class="col-lg-5 col-xs-5">
+      <label class="create-trns--label text-uppercase">title
+        <input class="create-trns--field" type="text" ng-model="new_trns_name">
+      </label>
+    </div>
+    <div class="col-lg-5 col-xs-5">
+      <label class="create-trns--label text-uppercase">qantity
+        <input class="create-trns--field" type="number" ng-model="new_trns_q">
+      </label>
+    </div>
+    <div class="col-lg-2 col-xs-2">
+      <button class="create-trns--new btn btn-success" ng-click="addNew(new_trns_name, new_trns_q)">ADD NEW</button>
+    </div>
+  </div>
+</div>
+<section ng-show="transactions.length === 0">
+  <p class="transactions-list--empty text-center">Empty now</p>
+</section>
+<list ng-show="transactions.length !== 0" transactions="transactions" authors="authors" watch-table="watchTable()" total="total"></list>
